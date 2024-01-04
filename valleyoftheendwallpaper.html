@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page avec Vidéo en Plein Écran</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        video {
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            position: absolute;
+            transition: transform 0.2s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <video autoplay loop id="backgroundVideo">
+        <!-- Ajoutez le chemin de votre vidéo haute qualité ici -->
+        <source src="./valley-of-the-end-naruto.mp4" type="video/mp4">
+        Votre navigateur ne prend pas en charge la balise video.
+    </video>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const video = document.getElementById('backgroundVideo');
+
+            document.addEventListener('mousemove', function (e) {
+                const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+                const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+
+                video.style.transform = `translate(${xAxis}px, ${yAxis}px) scale(104%)`;
+            });
+
+            // Réinitialiser la vidéo une fois terminée
+            video.addEventListener('ended', function () {
+                this.currentTime = 0;
+                this.play();
+            });
+        });
+    </script>
+</body>
+</html>
