@@ -3,6 +3,6 @@ Ce projet illustre un fond d'écran de la Vallée de la Fin* avec effet parallax
 
 La démo : https://ibrahyma.github.io/valleyoftheendwallpaper.github.io/
 
-<hr style="width: 100px;">
+<hr>
 
 Vallée de la Fin : Lieu notable du manga [Naruto](https://fr.wikipedia.org/wiki/Naruto)
